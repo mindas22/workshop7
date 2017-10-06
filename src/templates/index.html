@@ -4,7 +4,7 @@
 	<title>Todo List app</title>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<script src="js/angular.js"></script>
-<script src="js/app.js"></script>
+	<script src="js/app.js"></script>
 </head>
 <body>
 	<div class="container" data-ng-app="todoAppModule" data-ng-controller="todoCtrl">
@@ -12,7 +12,7 @@
 		<input type="text" ng-model="searchName"> {{searchName}}
 
 		<ul>
-			<li data-ng-repeat="currentStar in rockstars">{{currentStar.name}}</li>
+			<li data-ng-repeat="currentStar in rockStars">{{currentStar.name}}</li>
 		</ul>
 	
 	</div>
