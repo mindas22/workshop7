@@ -12,7 +12,7 @@
 		<input type="text" ng-model="searchName"> {{searchName}}
 
 		<ul>
-			<li data-ng-repeat="currentStar in rockStars">{{currentStar.name}}</li>
+			<li data-ng-repeat="currentStar in rockStars | filter:searchName">{{currentStar.name}}</li>
 		</ul>
 	
 	</div>
