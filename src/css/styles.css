@@ -1,0 +1,14 @@
+body {
+	background-color: #c3c3c3;
+}
+h1 {
+	color: blue;
+	text-decoration: underline;
+	text-decoration-color: red;
+	text-decoration-style: dashed;
+}
+
+.centras {
+	margin: 0 auto;
+	font-size: 2rem;
+}

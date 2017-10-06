@@ -1,4 +1,4 @@
 [
 	"./node_modules/angular/angular.js",
-	".src/js/**/*.js"
+	"./src/js/**/*.js"
 ]
