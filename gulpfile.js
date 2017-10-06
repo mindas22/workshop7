@@ -19,7 +19,7 @@ gulp.task('css', function() {
 
 gulp.task('js', function() {
 	gulp.src(scripts)
-		.pipe(concat('app.js'))
+		// .pipe(concat('app.js'))
 		.pipe(gulp.dest('./dist/js'))
 		.pipe(browserSync.reload({
 			stream: true

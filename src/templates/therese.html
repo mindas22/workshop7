@@ -1,0 +1,84 @@
+<!doctype html>
+
+<html>
+
+<head>
+
+</head>
+
+<body>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
+    
+    <!-- Controllers - in angular they do not talk directly to the view but go through a shared area called the ViewModel which is referred to as the $scope and contains all the data for the view -->
+    
+    <script>
+        
+        // set up an anonymous function
+        // var myFirstController = function($scope) {
+            
+        //     // set up our data
+        //     $scope.grungeStars = [
+        //         {name: 'Eddie Vedder', likes: 'Red Dots'},
+        //         {name: 'Chris Cornell', likes: 'Black Hole Suns'},
+        //         {name: 'Kurt Cobain', likes: 'Parrots'},
+        //     ];
+        // }
+        
+        // the preferred method of doing this is as follows, create and register the controller at the same time using the module() method
+        
+        // 1. create a model using the angular objects module() method
+        // note the []denoting an empty array, if you want your module to include other modules you can list them here [module1, module2] etc
+       var myApp = angular.module('myModule', []);
+        
+        // 2. create and register out controller with this module
+        myApp.controller('myFirstController', function($scope) {
+           
+            //3. set up our data
+            var grungeRockStars = [
+                {name: 'Eddie Vedder', likes: 'Red Dots'},
+                {name: 'Chris Cornell', likes: 'Black Hole Suns'},
+                {name: 'Kurt Cobain', likes: 'Parrots'}
+            ];
+            
+            // 4. add it to the scope
+            $scope.grungeRockStars = grungeRockStars;
+            
+            // Add some logic to the controller to take user input and add as a new item to the array
+            // note: we do not need to add the parameters to the function as they are already in the scope
+            $scope.makeMeAStar = function () {
+                 
+                $scope.grungeRockStars.push(
+                    {
+                        name: $scope.newStar.name,
+                        likes: $scope.newStar.likes
+                    }
+                );
+            };
+            
+        });
+
+    </script>
+    
+    <!-- Associate the controller with some part of our page to connect the controller to the view via the scope, use data-ng-controller isntead of data-ng-init -->
+    <div class="container" data-ng-app="myModule" data-ng-controller="myFirstController" style="border: solid 1px red;">
+    
+    <!-- extend the app to allow some user input -->
+    <!-- Create a new temporary object (newStar) in the model called newStar
+        Angular traps the button click in order to call a function -->
+    
+    Name: <input type="text" data-ng-model="newStar.name" /> {{newStar.name}}
+    <br />
+    Likes: <input type="text" data-ng-model="newStar.likes" /> {{newStar.likes}}
+    <br />
+    <button data-ng-click="makeMeAStar()">Let's Rock</button>
+    
+        <ul> 
+            <li data-ng-repeat="currentStar in grungeRockStars" >{{currentStar.name}} really likes {{currentStar.likes}}</li>
+        </ul>
+    
+    </div>
+    
+</body>
+
+</html>

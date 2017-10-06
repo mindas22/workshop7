@@ -1,11 +1,12 @@
 body {
-	background-color: #c3c3c3;
+	background-color: tan;
 }
 h1 {
-	color: blue;
+	color: green;
 	text-decoration: underline;
 	text-decoration-color: red;
 	text-decoration-style: dashed;
+	/*text-align: right;*/
 }
 
 .centras {
