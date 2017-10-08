@@ -3,12 +3,12 @@ var todoApp = angular.module("todoAppModule", []);
 
 todoApp.controller("todoCtrl", function($scope) {
 
-	var rockStars = [
-		{name: 'John Beetle', like: 'Yoko'},
-		{name: 'Paul Beatle', likes: 'Ringo'},
-		{name: 'Labas Rytas', likes: 'cold shower'}
+	var lists = [
+		{name: 'Finish workshop 7', Description: 'Yoko'},
+		{name: 'start SSWA module', Description: 'Ringo'},
+		{name: 'Go hiking', Description: 'cold shower'}
 	];
 
-	console.log(rockStars)
-	$scope.rockStars = rockStars;
+	console.log(lists)
+	$scope.lists = lists;
 });

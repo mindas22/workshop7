@@ -12,17 +12,12 @@
 		<input type="text" ng-model="searchName"> {{searchName}}
 
 		<ul>
-			<li data-ng-repeat="currentStar in rockStars | filter:searchName">{{currentStar.name}}</li>
+			<li data-ng-repeat="currentListItem in lists | filter:searchName ">{{currentListItem.name}}</li>
 		</ul>
 	
 	</div>
 
-<div class="container">
 
-	<p>1+2={{1+2}}</p>
-	<p>1+2={{'1'+'2'}}</p>
-	
-</div>
 
 </body>
 
